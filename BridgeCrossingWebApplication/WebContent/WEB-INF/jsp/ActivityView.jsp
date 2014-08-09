@@ -86,7 +86,10 @@
 					</tr>
 				</c:forEach>	
 				<tr>
-				<td style="text-align: right;" colspan="7"><input type="submit" id="pdfgen" name="pdfgen" value="PDF" align="right"/>&nbsp;&nbsp;</td>		 
+				<td colspan="6" align="center">
+				     <a id="folink" href="javascript:void(0);" onClick="window.open('DisplayHtmlView', 'DisplayHtmlView', 'width=400, height=200');">Full Report HTML View</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				     <a id="folink"  href="javascript:void(0);" onClick="window.open('DisplayPdfView', 'DisplayPdfView', 'width=400, height=200');">Full Report PDF View</a></td>		
+				<td><input type="submit" id="pdfgen" name="pdfgen" value="PDF" align="right"/>&nbsp;&nbsp;</td>		 
 				</tr>
 			</table>
 			</div>

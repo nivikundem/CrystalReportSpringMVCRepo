@@ -19,5 +19,21 @@
 	<servlet-mapping>
 		<servlet-name>CountPieChartByVehicletype</servlet-name>
 		<url-pattern>/finalCountPieChartByVehicletype</url-pattern>
+	</servlet-mapping>	
+	<servlet>
+		<servlet-name>HtmlView</servlet-name>
+		<servlet-class>com.xslt.pdf.DisplayHtmlServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HtmlView</servlet-name>
+		<url-pattern>/DisplayHtmlView</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>PdfView</servlet-name>
+		<servlet-class>com.xslt.pdf.DisplayPdfServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PdfView</servlet-name>
+		<url-pattern>/DisplayPdfView</url-pattern>
+	</servlet-mapping>	
 </web-app>

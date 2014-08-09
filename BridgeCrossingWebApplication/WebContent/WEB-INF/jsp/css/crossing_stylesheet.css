@@ -185,3 +185,27 @@
 	 color:red;
 	 display:inline-block;
 	}
+	
+	
+	
+	a#folink:link { 
+	color: black; 
+	background-color: #66CCCC;
+	text-decoration: none;
+	border: 2px solid black; 
+	
+	}
+	a#folink:visited { 
+	color: white; 
+	background-color: black;
+	text-decoration: none;
+	border: 2px solid white; 
+	
+	}
+	a#folink:hover {
+	color: black; 
+	background-color: white;
+	text-decoration: none;
+	border: 2px solid black; 
+	
+	} 

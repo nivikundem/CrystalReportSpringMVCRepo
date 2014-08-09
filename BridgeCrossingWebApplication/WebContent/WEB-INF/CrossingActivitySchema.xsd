@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"> 
+ <xs:element name="activitylist" type="activitylist" /> 
+ <xs:complexType name="activitylist">
+  <xs:sequence>
+   <xs:element name="act" type="activity" minOccurs="0"
+    maxOccurs="unbounded" />
+  </xs:sequence>
+ </xs:complexType> 
+ <xs:complexType name="activity">
+  <xs:sequence>
+	<xs:element name="gateNumber" type="xs:string" minOccurs="0" />
+	<xs:element name="uid" type="xs:integer" minOccurs="0" />
+	<xs:element name="direction" type="xs:string" minOccurs="0" />
+	<xs:element name="vehicleType" type="xs:string" minOccurs="0" />
+	<xs:element name="vrn" type="xs:string" minOccurs="0" />
+	<xs:element name="crossingDateAndTime" type="xs:string" minOccurs="0" />	
+  </xs:sequence>
+ </xs:complexType> 
+</xs:schema>
