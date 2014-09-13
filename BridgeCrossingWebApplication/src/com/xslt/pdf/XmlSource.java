@@ -3,6 +3,7 @@ package com.xslt.pdf;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,11 +22,11 @@ public class XmlSource {
 		private static DBDetails dBDetails = new DBDetails();
 		
 		
-	    Activitylist getActivityList() {
+	    Activitylist getActivityList() throws SQLException {
 	    	
 	    	
-    	Statement stmt;
-		Connection con;
+    	Statement stmt = null;
+		Connection con = null;
 		try {			 		
 			con = dBDetails.getDBConnection();
 			stmt = con.createStatement();
@@ -38,6 +39,10 @@ public class XmlSource {
 		} catch (Exception e) {
 			LOG.info(e.getMessage());
 
+		}
+		finally{
+			stmt.close();
+			con.close();
 		}
 		return null;
 	    	

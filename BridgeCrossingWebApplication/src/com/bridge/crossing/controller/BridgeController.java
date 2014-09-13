@@ -1,11 +1,14 @@
 package com.bridge.crossing.controller;
+import java.sql.SQLException;
 import java.util.logging.Logger;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import com.bridge.crossing.model.CrossingActivityObjModel;
 import com.bridge.pdfgenerator.PdfProcessor;
 
@@ -26,7 +29,7 @@ public class BridgeController {
 	public String getCrossingDetailsList(
 			@RequestParam(required = false) String quickSearchTextbox,
 			@RequestParam(required = false) String sortField,		
-			ModelMap model) {
+			ModelMap model) throws SQLException {
 
 		String quickSearchTextboxVar = "ALL";
 		if (quickSearchTextbox != null) {
@@ -47,7 +50,7 @@ public class BridgeController {
 			@RequestParam(required = false) String quickSearchTextbox,
 			@RequestParam(required = false) String sortField,
 			@RequestParam("pdf") int[] selectedPdfs,
-			Model model) {
+			Model model) throws SQLException {
 		
 		String quickSearchTextboxVar = "ALL";
 		if (quickSearchTextbox != null) {

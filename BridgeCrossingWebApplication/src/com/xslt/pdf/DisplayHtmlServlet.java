@@ -38,7 +38,13 @@ public class DisplayHtmlServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 
 		XmlSource xmlSource = new XmlSource();
-		com.bridge.jaxb.Activitylist activityList = xmlSource.getActivityList();
+		com.bridge.jaxb.Activitylist activityList = null;
+		try {
+			activityList = xmlSource.getActivityList();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		// Create Transformer
 		TransformerFactory tf = TransformerFactory.newInstance();
 		File xsltfile = new File(getServletContext().getRealPath(

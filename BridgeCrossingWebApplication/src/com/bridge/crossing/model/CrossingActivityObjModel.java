@@ -2,6 +2,7 @@ package com.bridge.crossing.model;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -27,10 +28,11 @@ public class CrossingActivityObjModel {
 	 * @param quickSearchTextboxVar
 	 * @param sortString
 	 * @return
+	 * @throws SQLException 
 	 */
-	public static List<CrossingActivityDetailsPOJO> getActivityDetailsResultList(String quickSearchTextboxVar, String  sortString) {
-		Statement stmt;
-		Connection con;
+	public static List<CrossingActivityDetailsPOJO> getActivityDetailsResultList(String quickSearchTextboxVar, String  sortString) throws SQLException {
+		Statement stmt = null;
+		Connection con = null;
 		try {			 		
 			con = dBDetails.getDBConnection();
 			stmt = con.createStatement();
@@ -43,6 +45,10 @@ public class CrossingActivityObjModel {
 		} catch (Exception e) {
 			LOG.info(e.getMessage());
 
+		}
+		finally{
+			stmt.close();
+			con.close();			
 		}
 		return null;
 	}
